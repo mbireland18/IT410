@@ -77,7 +77,6 @@ exports.readDir = function(path){
         .then(function(resolution){
             if (resolution !== 'directory') throw Error('Not a directory');
             return new Promise(function(resolve, reject){
-                //fs.readdir returns a directory of everything inside it ("files")
                 fs.readdir(path, function(err, files){
                     if (err) return reject(err);
                     return resolve(files);
